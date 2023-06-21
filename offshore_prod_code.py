@@ -2,29 +2,37 @@
 from pulp import*
 import numpy as np
 import pandas as pd
-'''∑_iϵI▒〖x_ij<y_ij K_j 〗'''
 
-''' reading Data'''
+
+''' Reading Data
+    data Location'''
+
 data_file =r"C:\Users\olw08\OneDrive - ORMAE\Desktop\AMM\excel_files_dat\data_task_prod_prob.xlsx"
-'''reading files'''
+
+'''Reading files
+   :fact_var_df : converting factyory data in pandas Dataframe format \n
+   :demand_df   : Monthly Demand data in pandas Datadrame format\n'''
+
 fact_var_df=pd.read_excel(data_file,sheet_name="factory_variables")
-
 demand_df=pd.read_excel(data_file,sheet_name="demand")
-#fact_var_df.head(), demand_df.head()
 
-''' Defining Capacity Variables'''
-'''Minimum capacity'''
+
+''' Defining Capacity Variables\n'''
+''':min_cap : List containing monthly minimum production limit of each factory\n 
+   :max_cap : List containing monthly maximum production limit of each factory'''
 min_cap=[]
 max_cap=[]
 min_cap.append(np.array(fact_var_df["MIN_CAPACITY"][fact_var_df["FACTORY"]=='A']))
 min_cap.append(np.array(fact_var_df["MIN_CAPACITY"][fact_var_df["FACTORY"]=='B']))
-'''Maximum capacity'''
 max_cap.append(np.array(fact_var_df["MAX_CAPACITY"][fact_var_df["FACTORY"]=='A']))
 max_cap.append(np.array(fact_var_df["MAX_CAPACITY"][fact_var_df["FACTORY"]=='B']))
 
+'''demand : array of monthly demands  '''
 demand=np.array(demand_df["DEMAND"])
 
-''' Defining the costs'''
+''' Defining the costs
+    -var_cost : Monthly variable cost per production unit in each factory
+    -fixed_cost: Monthly fixed cost in each factory if open'''
 var_cost=[]
 fixed_cost=[]
 '''Variable costs'''

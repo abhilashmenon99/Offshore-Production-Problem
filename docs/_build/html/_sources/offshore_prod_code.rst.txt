@@ -1,0 +1,7 @@
+offshore\_prod\_code module
+===========================
+
+.. automodule:: offshore_prod_code
+   :members:
+   :undoc-members:
+   :show-inheritance:

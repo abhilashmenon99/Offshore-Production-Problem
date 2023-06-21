@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Problem Statement &mdash; Assignment prob 1.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="offshore_prod_code module" href="offshore_prod_code.html" />
+    <link rel="prev" title="Offshore-Production-Problem" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Assignment prob
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Offshore-Production-Problem</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. Problem Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sets-and-indices">2. Sets and Indices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sets">2.1. Sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indices">2.2. Indices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lp-formulation">3. LP Formulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#decision-variables">3.1. Decision Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parameters">3.2. Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objective-function">3.3. Objective Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constraints">3.3. Constraints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="offshore_prod_code.html">offshore_prod_code module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Assignment prob</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Offshore-Production-Problem</a></li>
+      <li class="breadcrumb-item active">1. Problem Statement</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/output.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="problem-statement">
+<h1>1. Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this heading"></a></h1>
+<p>We have 2 offshore production plants in 2 locations and an estimated
+demand for our products.</p>
+<p>We want to produce a schedule of production from both plants that meets
+our demand with the lowest cost.</p>
+<p>A factory can be in 2 states:</p>
+<ul class="simple">
+<li><p>Off – Producing zero units</p></li>
+<li><p>On – Producing between its minimum and maximum production capacities</p></li>
+</ul>
+</section>
+<section id="sets-and-indices">
+<h1>2. Sets and Indices<a class="headerlink" href="#sets-and-indices" title="Permalink to this heading"></a></h1>
+<section id="sets">
+<h2>2.1. Sets<a class="headerlink" href="#sets" title="Permalink to this heading"></a></h2>
+<p><em>I</em>: set of all factories, I = {0,1}</p>
+<p><em>J</em>: set of all months, J = {0,1,2.….11}</p>
+</section>
+<section id="indices">
+<h2>2.2. Indices<a class="headerlink" href="#indices" title="Permalink to this heading"></a></h2>
+<p><em>i</em>: Denotes the factory number/index, <span class="math notranslate nohighlight">\(i\ \epsilon I\ \)</span></p>
+<p><em>j</em>: Denotes the month number/index,<span class="math notranslate nohighlight">\(\ \ \ \ j\ \epsilon\ J\)</span></p>
+</section>
+</section>
+<section id="lp-formulation">
+<h1>3. LP Formulation<a class="headerlink" href="#lp-formulation" title="Permalink to this heading"></a></h1>
+<p>Formulating the problem as an ILP problem</p>
+<section id="decision-variables">
+<h2>3.1. Decision Variables<a class="headerlink" href="#decision-variables" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_{ij}\)</span> : Quantity produced in factory ‘i’ in month ‘j’</p></li>
+</ul>
+<p>All <span class="math notranslate nohighlight">\(x_{ij}\)</span> are integers as quantity produced can’t be a fraction</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y_{ij}\ :\ \)</span>Represents the open or closed status a factory
+‘i’ in month ‘j’</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(y_{ij} = \left\{ \begin{array}{r}
+1\ if\ factory{\ 'i}^{'}\ is\ open\ in\ month\ 'j' \\
+0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Otherwise
+\end{array} \right.\ \)</span></p>
+</section>
+<section id="parameters">
+<h2>3.2. Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<p><span class="math notranslate nohighlight">\(Var\_ cost_{ij}\ \ \ \ \ \ \ \ \ \ :\ \ \ \)</span>Variable cost of
+production in factory ‘i’ in the month ‘j’</p>
+<p><span class="math notranslate nohighlight">\(Fixe{d\_ cost}_{ij}\ \ \ \ \ \ :\)</span> Fixed cost of production in
+factory ‘i’ in the month ‘j’</p>
+<p><span class="math notranslate nohighlight">\(Demand_{j}\ \ \ \ \ \ \ \ \ \ \ \ :\)</span> Demand to be met at month
+‘j’</p>
+<p><span class="math notranslate nohighlight">\(Minim\_ capacity_{ij}\ :\ \)</span> Minimum quantity that should be
+produced by factory i in month j</p>
+<p><span class="math notranslate nohighlight">\(Maxim\_ capacity_{ij}\ :\)</span> Maximum quantity that should be
+produced by factory i in month j</p>
+</section>
+<section id="objective-function">
+<h2>3.3. Objective Function<a class="headerlink" href="#objective-function" title="Permalink to this heading"></a></h2>
+<p>Minimize:
+<span class="math notranslate nohighlight">\(\sum_{j\epsilon J}^{}{(Var\_ cost_{ij}*x_{ij} + Fixed\_\cos t_{ij}\ }*{\ y_{ij})}_{\ }\ \ \ \ \ \ \forall i\ \epsilon\ I\)</span></p>
+</section>
+<section id="constraints">
+<h2>3.3. Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Production-Demand Constraint:</p></li>
+</ul>
+<p>The sum of quantities produced from each of the factories in a month
+must be equal to the demand in that month</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i\epsilon I}^{}{{(x}_{ij} = Demand_{ij}})\ \ \ \ \ \ \ \ \forall\ j\ \epsilon\ J\]</div>
+<ul class="simple">
+<li><p>Capacity constraints</p>
+<ul>
+<li><p>Minimum capacity constraint:</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>Production at each factory a month should be greater than the minimum
+production limit of the factory that month given that the factory is
+open in that month</p>
+<div class="math notranslate nohighlight">
+\[x_{ij} \geq minim\_ capacity_{ij}*y_{ij}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \forall i\ \epsilon\ I\ \ and\ \ \forall\ \ j\epsilon J\]</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Maximum capacity constraint:</p></li>
+</ul>
+<blockquote>
+<div><p>Production at each factory a month should be less than the minimum
+production limit of the factory that month given that the factory is
+open in that month</p>
+<div class="math notranslate nohighlight">
+\[x_{ij} \leq \ maxim\_ capacity_{ij}*y_{ij}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \forall i\ \epsilon\ I\ \ and\ \ \forall\ \ j\epsilon J\]</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Sign Constraints:</p></li>
+</ul>
+<p>The decision variables for production quantity considered should be
+non-negative</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(x_{ij} \geq 0\ \ \ \ \ \ \ \ \ \ \)</span>
+<span class="math notranslate nohighlight">\(\forall\ i\epsilon I\ and\ \ j\epsilon J\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_{ij}\epsilon\left\{ 0,1 \right\}\ \)</span>
+<span class="math notranslate nohighlight">\(\forall\ i\epsilon I\ \ and\ \ j\epsilon J\)</span></p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Offshore-Production-Problem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="offshore_prod_code.html" class="btn btn-neutral float-right" title="offshore_prod_code module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, amm.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
